@@ -91,13 +91,13 @@ public class SalesForceStepDef {
 	}
 
 	
-	 @Then("Verify Account Name") public void verify_account_name() {
-		 boolean alert = driver.findElement(By.xpath("//div[contains(@class,'toastContent')]")).isDisplayed();
-		  String alertmsg = driver.findElement(By.xpath("//span[contains(@class,'toastMessage ')]/a/div")).getText();
-		  if (alert) {
-			   System.out.println("Success confirmation is succesfully displayed! and the account name is: " + alertmsg);
+	@Then("Verify Account Name") public void verify_account_name() {
+		 boolean accName = driver.findElement(By.xpath("//div[contains(@class,'toastContent')]")).isDisplayed();
+		  String verifyAccName = driver.findElement(By.xpath("//span[contains(@class,'toastMessage ')]/a/div")).getText();
+		  if (accName) {
+			   System.out.println("Account is created successfully and the account name is: " + verifyAccName);
 			  } else {
-			   System.out.println("Success confirmation is not displaying");
+			   System.out.println("Account not created as expected");
 			  }
 			  driver.close();
 	 }
